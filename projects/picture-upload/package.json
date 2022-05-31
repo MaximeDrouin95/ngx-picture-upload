@@ -1,0 +1,8 @@
+{
+  "name": "picture-upload",
+  "version": "0.0.1",
+  "dependencies": {
+    "compressorjs": "^1.1.1",
+    "tslib": "^2.3.0"
+  }
+}

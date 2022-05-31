@@ -1,0 +1,30 @@
+<form [formGroup]="formGroup">
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>Quality</mat-label>
+    <input matInput type="number" formControlName="quality">
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>MaxWidth</mat-label>
+    <input matInput type="number" formControlName="maxWidth">
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>MinWidth</mat-label>
+    <input matInput type="number" formControlName="minWidth">
+  </mat-form-field>
+
+  <ngx-picture-upload [disabled]="formGroup.invalid"
+                      [quality]="formGroup.get('quality')?.value"
+                      [maxWidth]="formGroup.get('maxWidth')?.value"
+                      [minWidth]="formGroup.get('minWidth')?.value"
+                      type="png/image"
+                      [color]="{background: '#C1D7AE', border: '#8CC084', text: '#968E85', button: '#8CC084', icon: 'white'}"
+                      formControlName="picture"></ngx-picture-upload>
+</form>
+
+<div>
+  <h1>Result:</h1>
+  <img displayBase64Image [src]="formGroup.get('picture')?.value" type="png/image"
+       [alt]="formGroup.get('picture')?.value"/>
+</div>

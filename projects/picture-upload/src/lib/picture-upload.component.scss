@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:host {
+  display: block;
+  position: relative;
+  height: 150px;
+  width: 150px;
+
+  button {
+    border-radius: 20px;
+    background-color: #8CC084;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0;
+    outline: none;
+    border: 0;
+  }
+
+  button:hover {
+    filter: brightness(85%);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .upload-picture-form-placeholder {
+    height: 100%;
+    width: 100%;
+    background: #C1D7AE 0 0 no-repeat padding-box;
+    border: 1px solid #8CC084;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+
+    .upload-picture-form-add-button {
+      align-self: center;
+      display: flex;
+      flex-flow: column;
+
+      button {
+        align-self: center;
+      }
+    }
+  }
+
+  .upload-picture-form-edit-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

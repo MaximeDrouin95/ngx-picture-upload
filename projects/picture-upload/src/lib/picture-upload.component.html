@@ -1,0 +1,23 @@
+<ng-container *ngIf="(imagesFlow$ | async) as value; else addPicture">
+  <img [alt]="value" displayBase64Image [type]="type" [src]="value">
+  <button [ngStyle]="{'background-color': color?.button, color: color?.icon}" [class.disabled]="disabled"
+          [disabled]="disabled" (click)="delete()" class="upload-picture-form-edit-button"
+          title="delete">
+    <span class="material-icons">delete</span>
+  </button>
+</ng-container>
+
+<ng-template #addPicture>
+  <div class="upload-picture-form-placeholder"
+       [ngStyle]="{background: color?.background, 'border-color': color?.border}">
+    <div class="upload-picture-form-add-button">
+      <button [ngStyle]="{'background-color': color?.button, color: color?.icon}" [class.disabled]="disabled"
+              [disabled]="disabled"
+              (click)="fileInput.click(); $event.preventDefault(); $event.stopImmediatePropagation()">
+        <span class="material-icons">add</span>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<input [disabled]="disabled" hidden (change)="onFileSelected($event)" #fileInput type="file" [accept]="type">
